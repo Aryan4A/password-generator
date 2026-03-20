@@ -24,7 +24,8 @@ https://aryan4a.github.io/password-generator/
 
 ## 📸 Screenshot
 
-(Add a screenshot here later)
+<img width="455" height="440" alt="image" src="https://github.com/user-attachments/assets/0508c30f-f117-4eda-8a69-86cfe87055e0" />
+
 
 ## 📂 How to Run Locally
 
