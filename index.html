@@ -1,39 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+
+<body class="dark">
 
 <div class="container">
+
     <div class="top-bar">
-        <h2>🔐 Generator</h2>
-        <button onclick="toggleTheme()">🌙</button>
+        <div>
+            <h2>🔐 Password Generator</h2>
+            <p>Create a strong and secure password</p>
+        </div>
+
+        <button class="theme-btn" onclick="toggleTheme()" title="Toggle theme">
+            🌙
+        </button>
     </div>
 
     <div class="output-box">
-        <input type="text" id="password" readonly>
-        <button onclick="copyPassword()">Copy</button>
+        <input
+            type="text"
+            id="password"
+            placeholder="Your password"
+            readonly
+        >
+
+        <button class="copy-btn" onclick="copyPassword()">
+            Copy
+        </button>
     </div>
 
-    <div class="strength-bar">
-        <div id="strengthFill"></div>
+    <div class="strength-section">
+        <div class="strength-header">
+            <span>Password strength</span>
+            <span id="strengthText">—</span>
+        </div>
+
+        <div class="strength-bar">
+            <div id="strengthFill"></div>
+        </div>
     </div>
 
     <div class="settings">
-        <label>Length: <span id="lengthValue">8</span></label>
-        <input type="range" id="length" min="4" max="20" value="8">
 
-        <label><input type="checkbox" id="uppercase" checked> Uppercase</label>
-        <label><input type="checkbox" id="lowercase" checked> Lowercase</label>
-        <label><input type="checkbox" id="numbers" checked> Numbers</label>
-        <label><input type="checkbox" id="symbols"> Symbols</label>
+        <div class="length-header">
+            <label for="length">Password Length</label>
+            <span id="lengthValue">8</span>
+        </div>
+
+        <input
+            type="range"
+            id="length"
+            min="4"
+            max="32"
+            value="8"
+        >
+
+        <div class="options">
+
+            <label class="option">
+                <input type="checkbox" id="uppercase" checked>
+                <span class="checkmark"></span>
+                Uppercase
+            </label>
+
+            <label class="option">
+                <input type="checkbox" id="lowercase" checked>
+                <span class="checkmark"></span>
+                Lowercase
+            </label>
+
+            <label class="option">
+                <input type="checkbox" id="numbers" checked>
+                <span class="checkmark"></span>
+                Numbers
+            </label>
+
+            <label class="option">
+                <input type="checkbox" id="symbols">
+                <span class="checkmark"></span>
+                Symbols
+            </label>
+
+        </div>
     </div>
 
-    <button class="generate" onclick="generatePassword()">Generate</button>
+    <button class="generate" onclick="generatePassword()">
+        Generate Password
+        <span>↻</span>
+    </button>
+
 </div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
